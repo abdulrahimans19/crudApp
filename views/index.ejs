@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Students</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <h1>Students List</h1>
+    <form action="/create" method="POST">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="number" name="mark" placeholder="Mark" required />
+      <button type="submit">Add Student</button>
+    </form>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Mark</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      <% students.forEach(student => { %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.mark %></td>
+        <td><a href="/edit/<%= student._id %>">Edit</a></td>
+        <td><a href="/delete/<%= student._id %>">Delete</a></td>
+      </tr>
+      <% }); %>
+    </table>
+  </body>
+</html>
