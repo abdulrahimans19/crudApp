@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
-require("dotenv").config();
 mongoose.set("strictQuery", true);
-
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect("mongodb+srv://crud:crud@cluster0.ul2vgvs.mongodb.net/", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
